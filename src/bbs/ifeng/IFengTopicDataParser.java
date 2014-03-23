@@ -67,18 +67,18 @@ public class IFengTopicDataParser implements TopicDataParser{
 		if(flag.contains("numb_post2")){
 		try {
 			tmp1=doc.select("div.numb_post2").select("span").get(0).text();
-			Pattern Expression = Pattern.compile("共.*?页");
+			Pattern Expression = Pattern.compile("共(.*?)页");
 			Matcher common=Expression.matcher(tmp1);
 			if(common.find())
 			{
-				tmp2=common.group(0);
+				tmp2=common.group(1).trim();
 		    }
-		     Expression = Pattern.compile("[0-9].*?[0-9]");
-		     common=Expression.matcher(tmp2);
-		     if(common.find())
-		     {
-		    	 tmp2=common.group(0);
-		     }
+//		     Expression = Pattern.compile("[0-9].*?[0-9]");
+//		     common=Expression.matcher(tmp2);
+//		     if(common.find())
+//		     {
+//		    	 tmp2=common.group(0);
+//		     }
 		     num=Integer.valueOf(tmp2);
 		  
 			 String tid="";

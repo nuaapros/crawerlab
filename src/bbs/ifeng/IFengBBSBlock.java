@@ -22,11 +22,11 @@ public class IFengBBSBlock implements BBSBlock{
 	}
 	@Override
 	public String nextPage(PageData data) {
-		if (data == null) {
-			System.out.println("query first page of this block");
-		} else {
-			System.out.println("Previous page url = " + data.url());
-		}
+//		if (data == null) {
+//			System.out.println("query first page of this block");
+//		} else {
+//			System.out.println("Previous page url = " + data.url());
+//		}
 		
 		String ifengUrString;
 		//System.out.println(ifengUrString);
