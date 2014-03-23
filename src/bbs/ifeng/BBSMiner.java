@@ -49,9 +49,8 @@ public class BBSMiner implements bbsinter.BBSMiner{
 
 	@Override
 	public PageDataChecker getPageChecker() {
-		
 		return mDataChecker;
-	}
+	}  
 
 	@Override
 	public BBSConfig getConfig() {
