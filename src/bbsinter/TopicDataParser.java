@@ -47,7 +47,7 @@ public interface TopicDataParser {
 	 * @param data：帖子第一页的数据，保证不会为null
 	 * @return 帖子所有页的链接
 	 */
-	public List<String> getPageLinks(PageData data);
+	public List<String> getPageLinks(PageData data) throws BBSParseException;
 	
 	/**
 	 * 初始化上下文

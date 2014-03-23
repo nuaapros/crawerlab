@@ -1,6 +1,6 @@
 package bbs.ifeng;
 
-import bbsinter.BBSConfig;
+import bbsutils.BBSConfig;
 import bbsinter.BBSSplitter;
 import bbsinter.PageDataChecker;
 import bbsinter.TopicDataParser;
@@ -54,7 +54,7 @@ public class BBSMiner implements bbsinter.BBSMiner{
 
 	@Override
 	public BBSConfig getConfig() {
-		return 
+		return BBSConfig.getDefaultConfig();
 	}
 
 }

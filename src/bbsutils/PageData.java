@@ -2,8 +2,10 @@ package bbsutils;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -34,8 +36,18 @@ public class PageData {
 	public static PageData getPage(String url) {
 		Document doc;
 		
-		doc = Jsoup.parse(url);
-		return new PageData(url, doc);
+		try {
+			doc = Jsoup.parse(new URL(url), 60000);
+			return new PageData(url, doc);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 	
 	public String url() {

@@ -22,6 +22,10 @@ public class IFengTopicListParser implements TopicListParser{
 		String topicUrlString="";
 		int viewNumString=0;
 		String title="";
+		
+		System.out.println(data.html());
+		System.out.println("\n\n" + doc.getElementsByClass("postTable").size());
+		
 		 for(Element ele : doc.getElementsByClass("postTable").get(0).select("tbody > tr")){  
              if(!ele.select("td").toString().equals("")){  
             	 tmpInfo=new BBSTopic();
