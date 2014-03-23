@@ -7,7 +7,11 @@ import bbsutils.PageData;
  */
 public interface BBSBlock {
 	/**
-	 * 返回本块的下一页链接
+	 * 返回本块的下一页链接。
+	 * 
+	 * @param data ：当前访问页的数据，用来推算块中下一页的链接
+	 * 				注意本参数可能为NULL，用来表示请求页为第一页，此时务必返回
+	 * 				第一页的url
 	 * 
 	 * @return：如果已经到块的尾部，将返回null
 	 */
@@ -26,7 +30,7 @@ public interface BBSBlock {
 	/**
 	 * 返回块的大小，即块内的页数
 	 * 
-	 * 注意该方法并不总是可用的。如果不可用将返回一个负值
+	 * 注意该方法并不总是可用的。如果不可用必须返回一个负值
 	 * @return
 	 */
 	public int size();
@@ -37,7 +41,7 @@ public interface BBSBlock {
 	public String format();
 
 	/**
-	 * 重置当前的便利器
+	 * 重置当前的遍历进度，强制从头开始遍历
 	 */
 	public void reset();
 }

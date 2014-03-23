@@ -98,6 +98,9 @@ public class ChinaBBSSpliter implements BBSSplitter {
 		return pageCount;
 	}
 	
+	/**
+	 * 从一个描述符中初始化该Block
+	 */
 	@Override
 	public BBSBlock fromDescriptor(String desc) {
 		String[] seps = desc.split(",");

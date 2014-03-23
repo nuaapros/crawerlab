@@ -1,5 +1,7 @@
 package bbsinter;
 
+import bbsutils.BBSConfig;
+
 /**
  * 论坛挖掘器，其本身不直接提供任何功能，而是提供一组
  * 接口允许用户取得各项服务，本质上属于一个抽象工厂。
@@ -11,6 +13,11 @@ package bbsinter;
  *
  */
 public interface BBSMiner {
+	
+	// 下面的获取组件的方法实现中请尽量使用缓冲，不要每次调用都创建一个新实例，会产生
+	// 大量的小对象。如果组件类中没有状态属性，请实现为一个static对象，然后直接返回该
+	// static对象。
+	
 	/**
 	 * 获取用户信息解析器
 	 */
@@ -40,4 +47,10 @@ public interface BBSMiner {
 	 * @return
 	 */
 	public PageDataChecker getPageChecker();
+	
+	/**
+	 * 获取该BBS的配置信息表，多数论坛可直接返回默认配置，使用BBSConfig.getDefaultConfig()即可。
+	 * @return
+	 */
+	public BBSConfig getConfig();
 }

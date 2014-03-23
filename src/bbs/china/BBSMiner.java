@@ -8,25 +8,26 @@ import bbsinter.PageDataChecker;
 import bbsinter.TopicDataParser;
 import bbsinter.TopicListParser;
 import bbsinter.UserParser;
+import bbsutils.BBSConfig;
 
 public class BBSMiner implements bbsinter.BBSMiner {
 	// 缓存信息表
 	// 切记，如果这些类里面定义了数据属性，那么不能这样缓冲！多线程情况下
 	// 可能引发故障。
-	private ChinaBBSSpliter mSpliter
-						= new ChinaBBSSpliter();
+	private static ChinaBBSSpliter mSpliter
+								= new ChinaBBSSpliter();
 	
-	private ChinaTopicDataParser mTopicDataParser
-						= new ChinaTopicDataParser();
+	private static ChinaTopicDataParser mTopicDataParser
+								= new ChinaTopicDataParser();
 	
-	private ChinaUserParser mUserParser
-						= new ChinaUserParser();
+	private static ChinaUserParser mUserParser
+								= new ChinaUserParser();
 	
-	private ChinaTopicListParser mTopicListParser
-						= new ChinaTopicListParser();
+	private static ChinaTopicListParser mTopicListParser
+								= new ChinaTopicListParser();
 	
-	private ChinaBBSChecker mDataChecker 
-						= new ChinaBBSChecker();
+	private static ChinaBBSChecker mDataChecker 
+								= new ChinaBBSChecker();
 	
 	@Override
 	public UserParser getUserParser() {
@@ -40,18 +41,21 @@ public class BBSMiner implements bbsinter.BBSMiner {
 
 	@Override
 	public TopicListParser getTopicListParser() {
-		// TODO Auto-generated method stub
 		return mTopicListParser;
 	}
 
 	@Override
 	public BBSSplitter getSplitter() {
-		// TODO Auto-generated method stub
 		return mSpliter;
 	}
 	
 	@Override
 	public PageDataChecker getPageChecker() {
 		return mDataChecker;
+	}
+
+	@Override
+	public BBSConfig getConfig() {
+		return BBSConfig.getDefaultConfig();
 	}
 }

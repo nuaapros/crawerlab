@@ -9,7 +9,6 @@ import bbsinter.BBSBlock;
 import bbsinter.BBSMiner;
 import bbsinter.BBSSplitter;
 import bbsinter.PageDataChecker;
-import bbsinter.TopicDataContext;
 import bbsinter.TopicDataParser;
 import bbsinter.TopicListParser;
 

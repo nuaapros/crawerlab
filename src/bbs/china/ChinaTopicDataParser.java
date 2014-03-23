@@ -10,12 +10,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import bbsinter.TopicDataContext;
 import bbsinter.TopicDataParser;
 import bbsutils.BBSParseException;
 import bbsutils.BBSReply;
 import bbsutils.ExceptionBuilder;
 import bbsutils.PageData;
+import bbsutils.TopicDataContext;
 
 public class ChinaTopicDataParser implements TopicDataParser {
 	private static Pattern author_url_p = Pattern.compile("\\d+");
